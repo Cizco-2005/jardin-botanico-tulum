@@ -1,0 +1,135 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #ffffff;
+  overflow-x: hidden;
+
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background-image: url("../assets/images/fondo.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+}
+
+/* PANEL ocupa media pantalla */
+.glass-panel {
+  width: 50%;
+  height: 100%;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+
+/* OVERLAY OSCURO SOBRE EL HERO */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* ASEGURA QUE EL CONTENIDO QUEDE ENCIMA */
+.glass-panel {
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 1.2s ease;
+}
+
+/* ANIMACIÓN SUAVE */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DESCRIPCIÓN */
+.desc {
+  margin-top: 20px;
+  max-width: 500px;
+  line-height: 1.6;
+  opacity: 0.9;
+  color: rgba(255,255,255,0.9);
+  font-weight: 300;
+}
+
+/* BOTONES */
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* BOTÓN OUTLINE */
+.btn-outline {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* BOTÓN PRINCIPAL */
+.btn-filled {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.btn-filled:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* TEXTO FINAL */
+.info {
+  margin-top: 25px;
+  font-size: 14px;
+  opacity: 0.8;
+   color: rgba(255,255,255,0.7);
+}
+
+/* MEJORA DE TEXTO PRINCIPAL */
+.mask-text {
+  color: white !important;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+}
+
+
